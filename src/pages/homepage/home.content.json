@@ -1,0 +1,11 @@
+{
+    "about": {
+        "header": "About",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque aperiam saepe sequi omnis repellat harum accusamus quam quos neque fugiat dignissimos dolor vel, quia laborum officia inventore tempora delectus voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque tenetur nobis incidunt saepe error culpa quod tempora ad, recusandae similique nesciunt? Atque vel amet nobis. Adipisci dolor obcaecati dolorum veritatis?",
+        "isButtonRequired": 1,
+        "styleName": "contentbutton",
+        "buttonText": "Know More",
+        "isImageRequired": 0,
+        "imgName" :""
+    }
+}

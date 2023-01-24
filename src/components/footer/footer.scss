@@ -1,0 +1,8 @@
+@import '../../scss/common.scss';
+.footer
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: $edugrep-blue;
+    height: 25rem;
+}

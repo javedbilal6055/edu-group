@@ -1,0 +1,8 @@
+@import "../node_modules/bootstrap-scss/bootstrap.scss";
+@import "../node_modules/bootstrap-scss/bootstrap-utilities.scss";
+@import '../src/scss/common.scss';
+
+.App {
+    font-family: $primary-font-family;
+    
+}

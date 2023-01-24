@@ -1,0 +1,99 @@
+@import '../../scss/common.scss';
+
+$close-icon-non-collapsed : 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"  fill="white" class="bi bi-x-lg" viewBox="0 0 16 16"> <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/> </svg>';
+$close-icon-collapsed : "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e";
+
+
+.navbar {
+    
+    &.bg-transparent.navbar-expand-lg.navbar-light {
+        margin: 0px;
+        .nav-link {
+            color: $edugrep-white;
+            font-size: 1.15rem;
+        }
+        .navbar-toggler {
+            border-color: $edugrep-white;            
+        }
+        
+        @media screen and (max-width: 992px) {       
+            padding: 0;
+            position: relative;
+
+            .navbar-collapse {             
+                position: absolute;
+                top: 6.9rem;
+                right: -12px;
+                background: $edugrep-blue; 
+                height: 100vh;
+                z-index: 1;
+                margin-top: -2px;               
+            }
+
+            .navbar-nav {
+                padding-left: 25px;
+
+                .custom-button {
+                    margin-top: 30px;
+                }
+            }
+
+            .navbar-toggler {                
+                color: transparent;
+
+                &-icon {
+                    background-image: url($close-icon-non-collapsed);
+                }               
+              
+                &.collapsed {
+                    .navbar-toggler-icon {
+                        background-image: url($close-icon-collapsed);
+                    }
+                }
+            }
+
+        }
+       
+    }
+
+    .nav-link {
+        margin-right: 1.6rem;
+    }
+}
+
+
+.login-form {
+   
+    
+     
+    &_username, &_pass {
+        width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px 0px;
+    }
+
+    &_label {
+
+        padding: 12px 12px 12px 12px;
+       
+    }
+
+    &_submit-btn {
+        cursor: pointer;
+        background-color: $login-button-color;
+        color: $edugrep-white;
+        text-align: center;
+        text-decoration: none;
+        
+        padding: 5px 20px;
+        margin: 20px auto 4px auto;
+        border-radius: 25px;
+        font-size: 1.25rem;
+        border: none;
+        max-width: 150px;
+
+
+    }
+}

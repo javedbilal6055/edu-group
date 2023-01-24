@@ -1,0 +1,18 @@
+[
+    {
+        "text": "Institution",
+        "url": "/institution"
+    },
+    {
+        "text": "Teacher",
+        "url": "/teacher"
+    },
+    {
+        "text": "About Us",
+        "url": "/about-us"
+    },
+    {
+        "text": "Student-Offline",
+        "url": "/student"
+    }
+]

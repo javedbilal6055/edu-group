@@ -1,0 +1,126 @@
+@import '../../scss/common.scss';
+.custom-button {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+
+    @mixin buttonDefault {
+        cursor: pointer;
+        background-color: $login-button-color;
+        color: $edugrep-white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    &__login {
+        @include buttonDefault;
+        padding: 5px 20px;
+        margin: 0px 2px 4px 0px;
+        border-radius: 25px;
+        font-size: 1.25rem;
+    }
+
+    &__herobutton {
+        @include buttonDefault;
+        padding: 15px 50px;
+        margin: 20px 15px;
+        border-radius: 15px;
+        font-size: 1.65vw;
+        font-weight: 700;
+    }
+
+    &__contentbutton {
+        @include buttonDefault;
+        padding: 13px 30px;
+        margin: 0px 2px 4px 0px;
+        border-radius: 25px;
+        font-size: 1.25rem;
+    }
+
+    &__otp-button {
+        @include buttonDefault;
+        padding: 12px 10px;
+        min-width: 160px;
+        height: 51px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 24px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 23px;
+        @media screen and (max-width: 767px) {
+            max-width: 100px;
+        }
+    }
+
+    &__gridbutton, &__institutionGridbutton {
+        @include buttonDefault;
+        padding: 13px 30px;
+        margin: 0px 2px 4px 0px;
+        border-radius: 25px;
+        font-size: 1.25rem;
+    }
+
+    &__pricegridbutton {
+        @include buttonDefault;
+        padding: 13px 30px;
+        margin: 0px 2px 4px 0px;
+        border-radius: 25px;
+        font-size: 1.25rem;
+    }
+
+    &__popupgridbutton {
+        @include buttonDefault;
+        padding: 13px 22px;
+        margin: 0px 2px 4px 0px;
+        border-radius: 25px;
+        font-size: 1.25rem;
+    }
+
+    &__switchbutton {
+        @include buttonDefault;
+        border-radius: 0;
+        height: 50px;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid $register-form-border-color;
+        background-color: $edugrep-white;
+        color: $edugrep-black;
+
+        &.active {
+            background-color: $login-button-color;
+            color: $edugrep-white;
+        }
+
+        &.switchbuttons-left {
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        &.switchbuttons-right {
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 990px) and (max-width: 768px) {
+    .custom-button {
+        &__herobutton {
+            margin: 10px 15px;
+        }
+
+        &__contentbutton {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .custom-button {
+        &__herobutton {
+            margin: 10px 15px;
+            padding: 15px 50px;
+            font-size: 3vw;
+        }
+    }
+}

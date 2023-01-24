@@ -1,0 +1,11 @@
+{
+    "why": {
+        "header": "Why us ?",
+        "content": "Lorem ipsum door sit amet, consetetur sadipscing eitr, sed diam nonumy eirmod tempor invidunt ut abore et doore magna aiquyam erat, sed diam vouptua. At vero eos et accusam et justo duo doores et ea rebum. Stet cita kasd gubergren, no sea takimata sanctus est Lorem ipsum door sit amet. Lorem ipsum door sit amet, consetetur sadipscing eitr, sed diam nonumy eirmod tempor invidunt ut abore et doore magna aiquyam erat,sed diam vouptua. At vero eos accusam et justo duo dooreset ea rebum. Stet cita kasd Stetcita kasd gubergren, no sea takimata sanctus est Lorem ipsum door sit amet",
+        "isButtonRequired": 0,
+        "styleName": "",
+        "buttonText": "",
+        "isImageRequired": 1,
+        "imgName" :"whyTeacher"
+    }
+}

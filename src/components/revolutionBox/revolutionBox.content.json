@@ -1,0 +1,20 @@
+{
+    "header": "Join the Revolution",
+    "content": [
+        {
+            "imageName": "teacher",
+            "stats": 17000,
+            "desc": "No. of Registered Teachers"
+        },
+        {
+            "imageName": "student",
+            "stats": 190000,
+            "desc": "No. of Registered Students"
+        },
+        {
+            "imageName": "class",
+            "stats": 490000,
+            "desc": "No. of Class taken"
+        }
+    ]
+}

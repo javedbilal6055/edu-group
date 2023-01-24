@@ -1,0 +1,11 @@
+@import '../../scss/common.scss';
+.switch-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+    &-link {
+        text-decoration: none;
+    }
+}

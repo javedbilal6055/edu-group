@@ -1,0 +1,88 @@
+@import '../../scss/common.scss';
+
+
+
+.cbox {
+    margin: 4rem auto;
+    text-align: center;
+    
+    &_header {
+        font-size:6vh;
+        font-weight: 700;
+        margin: 0rem auto 2rem auto;
+        color:$edugrep-deep-blue;
+    }
+
+    &_content {
+        font-size:3.5vh;
+        font-weight: 500;
+        color:$edugrep-deep-blue;
+    }
+
+}
+
+.cboximg {
+    margin: 4rem auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+   
+    &_header {
+        font-size:6vh;
+        font-weight: 700;
+        margin: 6rem auto 2rem auto;
+        color:$edugrep-deep-blue;
+    }
+
+    &_content {
+        font-size:3.2vh;
+        line-height: 3.8vh;
+        font-weight: 500;
+        color:$edugrep-deep-blue;
+        padding: 0rem 2rem 0rem 6rem;
+    }
+
+    &_image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+}
+
+@media screen and  (max-width:768px) {
+
+    .cbox {
+        margin: 3rem auto;
+        
+        &_header {
+            font-size:6vw;
+        }
+    
+        &_content {
+            font-size:3.5vw; 
+        }
+    }
+
+    .cboximg {
+        margin: 3rem auto;
+        flex-direction: column;
+        &_header {
+            font-size:6vw;
+        }
+    
+        &_content {
+            font-size:3.5vw; 
+            padding: 0rem 1rem;
+            text-align: center;
+        }
+        &_image {
+        width: 100%;
+        height: auto;
+        padding: 0rem 3rem;
+
+        }
+    }
+
+    
+}
