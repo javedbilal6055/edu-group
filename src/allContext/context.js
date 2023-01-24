@@ -17,7 +17,7 @@ const FormProvider = ({ children }) => {
   const [severity, setSeverity] = useState("");
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
-
+  const [formState, setFormState] = useState(null);
   const [userDetails, saveUserDetails] = useState(null);
 
   const updateUserData = (data) => {
@@ -41,6 +41,8 @@ const FormProvider = ({ children }) => {
         saveMultiStepForm,
         userData,
         setUserData,
+        formState,
+        setFormState,
         updateUserData,
         userLogOut,
         setUserLogOut,

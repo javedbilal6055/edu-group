@@ -193,10 +193,7 @@ const InstitutionPage = () => {
           isImageRequired={why.isImageRequired}
         />
       </div>
-      <RevolutionBox />
-      <SliderDesktop />
-      <Contact buttonText={"Submit"} buttonStyleName={"login"} />
-      <Footer />
+      
     </div>
   );
 };
