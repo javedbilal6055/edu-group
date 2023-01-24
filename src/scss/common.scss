@@ -1,0 +1,14 @@
+@import './custom-variables.scss';
+
+/*-------------------
+common classes
+-------------------*/
+.stop-scroll {
+    overflow: hidden;
+}
+.hidden-element {
+    display: none;
+}
+.visible-element {
+    display: block;
+}

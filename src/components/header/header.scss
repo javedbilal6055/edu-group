@@ -1,0 +1,49 @@
+@import "../../scss/common.scss";
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $edugrep-blue;
+  height: 6.9rem;
+
+  &-left,
+  &-right {
+    display: flex;
+  }
+  &-left {
+    padding: 0rem 0rem;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 992px) {
+      img {
+        width: 80%;
+       
+      }
+    }
+    &-brandLink {
+      position: relative;
+      top: 50%;
+      left: 6%;
+      transform: translate(0, -50%);
+    }
+
+    &-brandlogo {
+      height: 90px;
+    }
+  }
+  &-right {
+    padding: 1rem 2.75rem 1rem 0rem;
+    flex-direction: row-reverse;
+    @media screen and (max-width: 992px) {
+      padding: 0;
+    }
+  }
+
+  .custom-button {
+    min-width: 120px;
+    &__login {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}

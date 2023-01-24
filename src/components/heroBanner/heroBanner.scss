@@ -1,0 +1,138 @@
+@import '../../scss/common.scss';
+.heroBanner {
+    display: flex;
+    flex-direction:column;
+    height: auto;
+   
+    &-top {
+        width:100%;
+        height:auto;
+        display: flex;
+        justify-content: flex-start;
+        background-image: url('../../images/JPEG/edugrep_services_banner.jpg');
+        background-size: cover;
+        background-position: top right;
+        
+            &-left {
+                width:50%;
+                height: 100%;
+                display: flex;
+                flex-direction:column;
+                align-items: left;
+                
+                &-title {
+                    font-size: 5vw;
+                    width: 100%;
+                    height: auto;
+                    padding: 3.8rem 0rem  0rem 2rem; 
+                    font-weight: bolder;
+                    line-height: 6.5vw;
+                    color:$edugrep-deep-blue;
+                }
+                &-summary {
+                    font-size: 1.4vw;
+                    width: 72%;
+                    height:auto;
+                    padding: 1rem 0rem  4rem 2rem;
+                    color:$edugrep-deep-blue;
+                    font-weight: bold;
+                }
+            }
+
+            &-right {
+                padding: 1rem; 
+                width: 50%;
+                height: auto;
+                display: flex;
+                &-img {
+                    display: none;
+                } 
+            }
+        }
+
+    &-bottom {
+        width:100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 990px) {
+    
+    .heroBanner {
+        &-top {
+            
+            background-image: none;
+            flex-direction:column-reverse;
+
+            &-left, &-right {
+               width: 100%;
+               
+            }
+            &-right {
+               
+               &-img { 
+                   display: block;
+                   width: 100%;
+                   height: auto;
+                  
+               }
+            }
+
+            &-left {
+                display: flex;
+                align-items: center;
+                &-title{
+                   padding:1vw;
+                   text-align: center;
+                   font-size: 5vw;
+                   line-height: 7vw;
+                  
+               }
+               &-summary {
+                    padding:1vw;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 3vw;
+                }
+            }
+
+        }
+
+        &-bottom {
+            width:100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+            
+        }
+    }
+  }
+
+  @media only screen and (max-width: 1250px) and (min-width: 990px)  {
+
+    .heroBanner {
+        &-top { 
+            &-left {
+                &-title {
+                    font-size: 4.2vw;
+                    line-height: 6vw;
+                }
+                &-summary {
+                   
+                    font-size: 1.35vw;
+                }
+            }
+        }
+    }
+              
+
+  }

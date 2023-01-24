@@ -1,0 +1,112 @@
+@import '../../scss/common.scss';
+.sliderBg {
+    background-image: url('../../images/JPEG/sliderbg.jpg');
+    height: 45rem;
+    margin: 4rem 0rem 0rem 0rem;
+    background-position: left top;
+    background-size: cover;
+
+    &_header {
+        text-align: center;
+        font-size: 3rem;
+        width: 100%;
+        margin: 9rem 0rem 4rem 0rem;
+        background: -webkit-linear-gradient(-90deg, $edugrep-blue, $edugrep-deep-blue);
+        background-position: center center;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+    &_center {
+        padding: 0rem 3rem;
+        color: $edugrep-deep-blue;
+
+        &_content {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            min-height: 18rem;
+        }
+
+        &_name {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        &_designation {
+            text-align: right;
+        }
+
+        .slick {
+            &-arrow {
+                display: none;
+                height: 80px;
+                width: 80px;
+                @media screen and (min-width: 992px) {
+                    display: block;
+                }
+
+                &::before {
+                    font-size: 80px;
+                }
+
+                &.slick-prev {
+                    left: -100px;
+                }
+
+                &.slick-next {
+                    right: -100px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sliderBg {
+        &_header {
+            font-size: 1.8rem;
+            margin: 9rem 0rem 3rem 0rem;
+        }
+        &_center {
+            padding: 0rem 1rem;
+            color: $edugrep-deep-blue;
+
+            &_content {
+                font-size: 1.2rem;
+                min-height: 18rem;
+            }
+            &_name {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+            &_designation {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .sliderBg {
+        &_center {
+            padding: 0rem 0rem;
+            &_content {
+                font-size: 1.5rem;
+                min-height: 18rem;
+            }
+            &_name {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            &_designation {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+    }
+}

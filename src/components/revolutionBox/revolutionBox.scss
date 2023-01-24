@@ -1,0 +1,52 @@
+@import '../../scss/common.scss';
+
+.revBox {
+    margin: 2rem auto;
+    text-align: center;
+
+    &_header {
+        font-size:8vh;
+        font-weight: bolder;
+        margin: 0rem auto 0.8rem auto;
+        color:$edugrep-deep-blue; 
+    }
+
+    &_content {
+       text-align: center;
+       &_image {
+          width: 100%;
+          height: auto; 
+          max-width: 350px;
+       }
+       &_stats {
+           font-size:8vh;
+           font-weight: 500;
+           color:$edugrep-blue;
+       }
+       &_desc {
+           font-size:3.5vh;
+           font-weight: 500;
+           color:$edugrep-deep-blue;
+       }
+    }
+}
+
+@media screen and  (max-width:768px) {
+    .revBox {
+        
+        &_header {
+            font-size:8vw;
+        }
+    
+        &_content {
+            &_stats {
+                font-size:8vw; 
+                font-weight: 500;  
+            }
+            &_desc {
+                font-size:3.5vw; 
+                font-weight: 500; 
+            } 
+        }
+    }
+}

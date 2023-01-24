@@ -1,0 +1,67 @@
+@import '../../../scss/common.scss';
+
+.studentOffline-register {
+    .hint-message-div {
+        color: $edugrep-blue;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    &__otp-box {
+        width: 20%;
+        min-width: 140px;
+        float: left;
+    }
+    &__city {
+
+        width: 60%;
+        min-width: 240px;
+        float: right;
+        margin-left: 20px;
+        opacity: 0;
+    }
+
+    &__city-visible {
+        opacity: 100 !important;
+    }
+    
+    .last-two-step-headings{
+        font-size: 1.5rem;
+    }
+
+    .rate-description {
+        font-size: 0.7rem;
+        color: $login-button-color;
+        font-weight: 600;
+    }
+
+    .hint-password-div {
+        margin-top: 12px;
+        width: 84%;
+        color: $gray-4;
+        font-size: 10px;
+        font-weight: 600;
+        margin-left: 7px;
+    }
+
+    .password-input, .confirm-password-input {
+        width: 67%
+    }
+
+    .password-matched {  
+        font-size: 9px;
+        font-weight: 600;
+        position: relative;
+        top: -33px;
+        left: 108%;
+    }
+
+    .title-description {
+        clear: both;
+        &__child {
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+}
