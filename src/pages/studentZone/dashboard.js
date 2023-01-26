@@ -1,27 +1,36 @@
-import React, { useEffect, useState } from "react";
-import "./dashboard.scss";
-import { useSelector, useDispatch } from "react-redux";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import StudentSidebar from "../../StudentZone/sidebar/sidebar.js";
-import StudentNavbar from "../../StudentZone/navbar/navbar";
-import axiosGet from "../../../axios/axiosGet";
+import React, { useContext, useEffect, useState } from "react";
+import "../studentZone/dashboard.scss";
+
+import { BrowserRouter as Router, Route, Redirect, useNavigate } from "react-router-dom";
+
+import StudentSidebar from "../../components/StudentZone/sidebar/sidebar";
+import StudentNavbar from "../../components/StudentZone/navbar/navbar";
+import axiosGet from "../../axios/axiosGet";
 import { toast } from "react-toastify";
 import SheduledDemoList from "./sheduledDemoList";
-import UserProfile from "./userProfile";
-import RequestList from "./requestsList";
-import PaymentList from "./paymentsList";
-import { actionCreators } from "../../../state";
-import { bindActionCreators } from "redux";
+import UserProfile from "../../pages/studentZone/userProfile";
+import RequestList from "../../pages/studentZone/requestsList";
+import PaymentList from "../../pages/studentZone/paymentsList";
+import { FormContext } from "../../allContext/context";
+
 
 
 const StudentDashboard = () => {
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const { saveUserDetails} = bindActionCreators(actionCreators, dispatch);
+  const navigate = useNavigate();
+  const {
+    saveUserDetails,
+    userDetails,
+    saveFormData,
+    formData,
+    multiStepForm,
+    saveMultiStepForm,
+    userData,
+    setUserData,
+    isModalOpen, setModalOpen
+  } = useContext(FormContext);
+ 
 
-  const userDataRedux = useSelector((state) => state.user);
-  console.log("asdfghj", userDataRedux);
+  console.log("asdfghj", userData);
   const [activeTab, setTab] = useState(1);
   const [demoList, setDemoList] = useState([]);
   const [paymentList, setPaymentList] = useState([]);
@@ -30,7 +39,7 @@ const StudentDashboard = () => {
     const token = localStorage.getItem("access_token");
     if (token === null) {
       console.log("login not found");
-      history.push("/home");
+      navigate("/home");
     }
     let getRequestData = {
       path: "/students/getRequests",
@@ -58,7 +67,7 @@ const StudentDashboard = () => {
 
   const initPaymentText = (x) => {
     console.log("Init Payment Data", x);
-    history.push(`/paymentPage/${x.transactionId}`);
+    navigate(`/paymentPage/${x.transactionId}`);
   };
 
   const handleTabChange = (tab) => {
@@ -77,7 +86,7 @@ const StudentDashboard = () => {
     };
     saveUserDetails(userDataObject);
     localStorage.clear();
-    history.push("/");
+    navigate("/");
   };
   const showDate = (date) => {
     const newDate = new Date(date);
@@ -92,7 +101,7 @@ const StudentDashboard = () => {
       />
       <div id="page-content-wrapper">
         <StudentNavbar
-          name={userDataRedux != null ? userDataRedux.firstName : ""}
+          name={userData != null ? userData.firstName : ""}
         />
         <div className="container-fluid px-4">
           {activeTab === 1 ? (

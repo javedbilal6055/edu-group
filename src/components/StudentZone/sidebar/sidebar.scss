@@ -1,0 +1,74 @@
+@import '../../../scss/common.scss';
+
+.side-bar
+{
+    display: flex;
+    height: 100vh; 
+    overflow: scroll initial;
+    
+    &-icon { 
+       
+        color:$edugrep-white;
+    }
+}
+.sidebar
+{
+  background-color: #333;
+
+}
+.brandlogo
+{
+    height: 39px;
+}
+
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+    
+  }
+  
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    background-color: #333;
+  }
+  
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+  
+  #menu-toggle {
+    cursor: pointer;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 20px 30px;
+    color: $edugrep-white;
+    cursor: pointer;
+  }
+  
+  .list-group-item.active {
+    background-color: transparent;
+    color: $edugrep-blue;
+    font-weight: bold;
+    border: none;
+  }
+  
+  #menu-toggle {
+    cursor: pointer;
+  }
+  
+  
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    
+  }

@@ -1,0 +1,14 @@
+@import '../../../scss/common.scss';
+
+.navbar-light
+{
+    background-color: $edugrep-blue;
+    color:$edugrep-white;
+    
+}
+
+/*overwriting class of  cbreact*/
+.icon-suffix
+{
+    margin:0px !important;
+}
