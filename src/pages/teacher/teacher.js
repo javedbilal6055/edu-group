@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import ContentBox from "../../components/contentBox/contentBox";
-import HeroBannerForm from "../../components/heroBanner/heroBanner";
-import Contact from "../../components/contact/contact";
-import RevolutionBox from "../../components/revolutionBox/revolutionBox";
-import SliderDesktop from "../../components/slider/sliderDesktop";
-import Footer from "../../components/footer/footer";
+import HeroBannerForm from "../../components/heroBannerForm/heroBannerForm";
 
 const TeacherPage = () => {
   const [instContent, SetInstContent] = useState(

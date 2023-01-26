@@ -1,21 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
-import './navBar.scss';
+import "./navBar.scss";
 import { Nav, Navbar, Container, Modal } from "react-bootstrap";
 import CustomButton from "../Button/CustomButton";
 import { Link } from "react-router-dom";
-import JsonForm from '../json-schema-form/JsonForm';
+import JsonForm from "../json-schema-form/JsonForm";
 import { FormContext } from "../../allContext/context";
 function CustomeNavBar() {
   const [navLinks, setNavLinks] = useState(require("./navbar.content.json"));
-  const [isModalOpen, setModalOpen] = useState(false);
-  const {userDetails,saveUserDetails} = useContext(FormContext);
+  const { userDetails, saveUserDetails, isModalOpen, setModalOpen } =
+    useContext(FormContext);
   useEffect(() => {
     /* To add collapsed class on load for hamburger button */
     let hamburgerButton = document.querySelector(".navbar-toggler");
     hamburgerButton.classList.add("collapsed");
 
     hamburgerButton.addEventListener("click", handleHamburgerButtonClick);
-
   }, []);
 
   /*To prevent page from scrolling when hamburger menu is open*/
@@ -29,7 +28,7 @@ function CustomeNavBar() {
   };
 
   const openModal = (e) => {
-    console.log("event",e,"...userinfo..",userDetails);
+    console.log("event", e, "...userinfo..", userDetails);
     e.preventDefault();
     // code need to be update as per context api rather than redux
     if (!userDetails) {
@@ -48,7 +47,7 @@ function CustomeNavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {navLinks.map((item,index) => (
+            {navLinks.map((item, index) => (
               <Nav.Link as={Link} to={item.url} key={index}>
                 {item.text}
               </Nav.Link>

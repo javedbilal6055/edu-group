@@ -19,7 +19,7 @@ const FormProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [formState, setFormState] = useState(null);
   const [userDetails, saveUserDetails] = useState(null);
-
+  const [isModalOpen, setModalOpen] = useState(false);
   const updateUserData = (data) => {
     setUserData(data);
   };
@@ -43,6 +43,8 @@ const FormProvider = ({ children }) => {
         setUserData,
         formState,
         setFormState,
+        isModalOpen,
+        setModalOpen,
         updateUserData,
         userLogOut,
         setUserLogOut,

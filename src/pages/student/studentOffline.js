@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import HeroBannerForm from "../../components/heroBanner/heroBanner";
+import HeroBannerForm from "../../components/heroBannerForm/heroBannerForm";
 import HowItWorkBox from "../../components/howItWork/howItWork";
 import axiosGet from "../../axios/axiosGet";
 import "./studentOffline.scss";

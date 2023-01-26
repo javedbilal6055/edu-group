@@ -10,6 +10,8 @@ import Contact from "./components/contact/contact";
 import RevolutionBox from "./components/revolutionBox/revolutionBox";
 import SliderDesktop from "./components/slider/sliderDesktop";
 import StudentOffline from "./pages/student/studentOffline";
+import StudentOnline from "./pages/student/studentOnline";
+import AdminDashboard from "./pages/adminZone/dashboard";
 function App() {
   return (
     <div>
@@ -21,12 +23,13 @@ function App() {
           <Route path="/teacher" element={<TeacherPage />} />
           <Route path="/about-us" element={<AboutPage />} />
           <Route path="/student" element={<StudentOffline/>} />
-          <Route path="/student-on" element={<h2>Studen Online</h2>} />
-          <Route path="/adminZone" element={<h2>AdmiinZone</h2>} />
+          <Route path="/student-on" element={<StudentOnline />} />
+          <Route path="/adminZone" element={<AdminDashboard />} />
           <Route path="/StudentZone" element={<h2>StudentZone</h2>} />
           <Route path="/teacherZone" element={<h2>TeacherZone</h2>} />
           <Route path="/instituteZone" element={<h2>StudentZone</h2>} />
           <Route path="/paymentPage:trxId" element={<h3>Payment Zone</h3>} />
+          <Route path="*" element={<h3>Not Found</h3>} />
         </Routes>
         <RevolutionBox />
         <SliderDesktop />

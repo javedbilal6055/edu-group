@@ -7,7 +7,10 @@
     position: absolute;
     left: 455px;
     top: 84px;
-        
+    @media (max-width: 550px) {
+  position: relative;
+  
+    }
     font-family: $primary-font-family;
     &-item {
         align-self: center;
