@@ -11,7 +11,9 @@ const PriceCalc = (props) => {
     e.preventDefault();
     setModalOpen(true);
   };
-
+const [speedoData,setSpeedoData] = useState({
+  
+})
   const closeModal = () => {
     setModalOpen(false);
   };
