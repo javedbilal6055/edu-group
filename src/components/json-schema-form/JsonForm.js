@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./JsonForm.scss";
-// import * as Utils from '@rjsf/utils';
-// import Form from "@rjsf/core";
+
 import CustomButton from "../Button/CustomButton";
 import SwitchButtons from "../switchButtons/SwitchButtons";
 import { useNavigate } from "react-router-dom";
@@ -10,8 +9,9 @@ import axiosPut from "../../axios/axiosPut";
 import axiosPost from "../../axios/axiosPost";
 import { FormContext } from "../../allContext/context";
 import PriceCalc from "../ButtonpriceCalc/pricecalc";
-import { Form } from "react-bootstrap";
-
+import { RJSFSchema } from "@rjsf/utils";
+import validator from "@rjsf/validator-ajv8";
+import Form from "@rjsf/core";
 const JsonForm = (props) => {
   const history = useNavigate();
   let contactUsData = require("./contactUsSchema");
@@ -510,13 +510,14 @@ const JsonForm = (props) => {
           schema={schemaData.schema}
           uiSchema={schemaData.UISchema}
           formData={formData}
+          validator={validator}
           onChange={({ formData }) =>
             handleFormChange(formData)
           } /*onSubmit={e => setFormData(e.formData)} */
         />
         {/* <Utils
           schema={schemaData.schema}
-          uiSchema={schemaData.UISchema}
+          uischema={schemaData.UISchema}
           formData={formData}
           onChange={({ formData }) =>
             handleFormChange(formData)
