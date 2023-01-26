@@ -1,0 +1,60 @@
+@import '../../scss/common.scss';
+
+.hiwBox {
+    margin: 2rem auto;
+    padding: 0rem 3rem;
+    text-align: center;
+
+    &_header {
+        font-size:8vh;
+        font-weight: bolder;
+        margin: 0rem auto 0.8rem auto;
+        color:$edugrep-deep-blue; 
+    }
+
+    &_content {
+       text-align: center;
+       &_image {
+          width: 100%;
+          height: auto; 
+          max-width: 450px;
+       }
+       &_short {
+           font-size:4vh;
+           font-weight: 700;
+           color:$edugrep-deep-blue;
+           margin: 0rem 0rem 1rem 0rem;
+       }
+       &_desc {
+           font-size:2.3vh;
+           font-weight: 700;
+           color:$edugrep-deep-blue;
+           padding: 0rem 2rem;
+       }
+    }
+}
+
+@media screen and  (max-width:768px) {
+    .hiwBox {
+        
+        &_header {
+            font-size:8vw;
+        }
+    
+        &_content {
+            &_image {
+                width: 100%;
+                height: auto; 
+                
+             }
+            &_short {
+                font-size:8vw; 
+                font-weight: 500;  
+            }
+            &_desc {
+                font-size:4vw; 
+                font-weight: 500; 
+            } 
+        }
+    }
+}

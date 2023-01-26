@@ -1,20 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ContentBox from "../../components/contentBox/contentBox";
-import HeroBannerForm from "../../components/heroBanner/heroBanner";
-import Contact from "../../components/contact/contact";
-import RevolutionBox from "../../components/revolutionBox/revolutionBox";
-import SliderDesktop from "../../components/slider/sliderDesktop";
-import Footer from "../../components/footer/footer";
+import HeroBannerForm from "../../components/heroBannerForm/heroBannerForm";
 import { toast } from "react-toastify";
 import axiosGet from "../../axios/axiosGet";
 import axiosOtpPost from "../../axios/axiosOtpPost";
 import "./institution.scss";
 import { FormContext } from "../../allContext/context";
+import JsonForm from "../../components/json-schema-form/JsonForm";
 const InstitutionPage = () => {
   const [instContent, SetInstContent] = useState(
     require("./institution.content.json")
   );
-  console.log("..schema222",instContent);
+  console.log("..schema222", instContent);
   const {
     saveUserDetails,
     saveFormData,
@@ -24,7 +21,7 @@ const InstitutionPage = () => {
     userData,
     setUserData,
   } = useContext(FormContext);
-  
+
   const showStep2Divs = () => {
     let step1Divs = document.querySelectorAll(".step-1");
     let step2Divs = document.querySelectorAll(".step-2");
@@ -178,6 +175,9 @@ const InstitutionPage = () => {
     button1StyleName: "gridbutton",
     button2StyleName: "gridbutton",
   };
+  useEffect(() => {
+    require("./institution.content.json");
+  }, []);
   return (
     <div>
       <div className="institution-page">
@@ -188,15 +188,11 @@ const InstitutionPage = () => {
           buttonStyleName={"institutionGridbutton"}
         />
         <ContentBox
-          header={why.header}
-          content={why.content}
-          isImageRequired={why.isImageRequired}
+          header={instContent?.header}
+          content={instContent?.content}
+          isImageRequired={instContent?.isImageRequired}
         />
       </div>
-      <RevolutionBox />
-      <SliderDesktop />
-      <Contact buttonText={"Submit"} buttonStyleName={"login"} />
-      <Footer />
     </div>
   );
 };

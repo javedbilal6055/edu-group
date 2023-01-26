@@ -11,9 +11,10 @@ function axiosPost(props) {
   }
 
   const response = axios.post(URL + path, data, headers).then((res) => {
+    console.log("post form res...",res);
     return res;
   });
-
+console.log("post form response..",response);
   return response;
 }
 

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./JsonForm.scss";
-// import * as Utils from '@rjsf/utils';
-// import Form from "@rjsf/core";
+
 import CustomButton from "../Button/CustomButton";
 import SwitchButtons from "../switchButtons/SwitchButtons";
 import { useNavigate } from "react-router-dom";
@@ -10,10 +9,11 @@ import axiosPut from "../../axios/axiosPut";
 import axiosPost from "../../axios/axiosPost";
 import { FormContext } from "../../allContext/context";
 import PriceCalc from "../ButtonpriceCalc/pricecalc";
-import { Form } from "react-bootstrap";
-
+import { RJSFSchema } from "@rjsf/utils";
+import validator from "@rjsf/validator-ajv8";
+import Form from "@rjsf/core";
 const JsonForm = (props) => {
-  const history = useNavigate();
+  const navigate = useNavigate();
   let contactUsData = require("./contactUsSchema");
   let institutionRegisterData = require("./institutionRegisterSchema");
   let teacherRegisterData = require("./teacherRegisterSchema");
@@ -24,17 +24,19 @@ const JsonForm = (props) => {
   let PriceCalcFormData = require("./priceCalcSchema");
   const {
     saveUserDetails,
+    userDetails,
     saveFormData,
     formData,
     multiStepForm,
     saveMultiStepForm,
     userData,
     setUserData,
+    isModalOpen, setModalOpen
   } = useContext(FormContext);
   const [schemaData, setSchemaData] = useState(contactUsData);
 
   console.log("JSON Form state is", formData);
-  console.log("User state is ", userData);
+  console.log("User state is ", userDetails);
   /* Redux store related code */
 
   useEffect(() => {
@@ -95,7 +97,7 @@ const JsonForm = (props) => {
     //console.log("Submit Event");
     switch (props.formType) {
       case "login":
-        loginFormSubmit();
+        loginFormSubmit(props.formType);
         break;
       case "studentOffline-register":
         studentOfflineFormSubmit();
@@ -121,7 +123,8 @@ const JsonForm = (props) => {
   };
 
   // To handle form submissions
-  const loginFormSubmit = async () => {
+  const loginFormSubmit = async (type) => {
+    console.log("login frm....",type);
     const postRequestData = {
       path: "/register/login",
       data: {
@@ -130,6 +133,7 @@ const JsonForm = (props) => {
       },
     };
     let loginRequest = await axiosPost(postRequestData);
+    console.log("login response....",loginRequest);
     if (loginRequest.data.access_token != undefined) {
       let response = loginRequest.data;
       let userDataObject = {
@@ -144,14 +148,19 @@ const JsonForm = (props) => {
       localStorage.setItem("access_token", loginRequest.data.access_token);
       saveUserDetails(userDataObject);
       if (userDataObject.role === "admin") {
-        history.push("/adminZone");
+        navigate("/adminZone");
       } else if (userDataObject.role === "teacher") {
-        history.push("/teacherZone");
+        navigate("/teacherZone");
       } else if (userDataObject.role === "institute") {
-        history.push("/instituteZone");
+        navigate("/instituteZone");
       } else if (userDataObject.role === "student") {
-        history.push("/studentZone");
+        navigate("/studentZone");
       }
+    }
+    else {
+      console.log("Database Error");
+      setModalOpen(false)
+      navigate("/");
     }
   };
 
@@ -294,7 +303,7 @@ const JsonForm = (props) => {
           description: "string",
           status: "pending",
           lastComments: "",
-          competitiveExam: formData?.competitiveExam == "Yes" ? true : false,
+          competitiveExam: formData?.competitiveExam === "Yes" ? true : false,
           assignedTeacherId: 0,
           address: {},
           timeSlot: formData?.daySlot,
@@ -510,18 +519,11 @@ const JsonForm = (props) => {
           schema={schemaData.schema}
           uiSchema={schemaData.UISchema}
           formData={formData}
+          validator={validator}
           onChange={({ formData }) =>
             handleFormChange(formData)
           } /*onSubmit={e => setFormData(e.formData)} */
         />
-        {/* <Utils
-          schema={schemaData.schema}
-          uiSchema={schemaData.UISchema}
-          formData={formData}
-          onChange={({ formData }) =>
-            handleFormChange(formData)
-          } 
-        /> */}
         {props.buttonGrid ? (
           // <ButtonGrid {...buttonGridData} clickEvent={(e) => handleFormSubmit(e)}/>
 

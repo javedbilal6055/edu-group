@@ -24,14 +24,6 @@ const Homepage = () => {
           isImageRequired={about.isImageRequired}
         />
       </div>
-      <RevolutionBox />
-      <SliderDesktop />
-      <Contact
-        buttonText={"Submit"}
-        buttonStyleName={"login"}
-        formType={"contact-us"}
-      />
-      <Footer />
     </div>
   );
 };
